@@ -29,8 +29,13 @@
 </html>
 
 <style>
+
+    *{
+        background-color: #212121;
+    }
         h3{
             text-align: center;
+            color: white;
         }
 
         body {
@@ -44,14 +49,17 @@
         form {
             width: 300px; 
             padding: 20px;
-            border: 1px solid #ccc;
+            background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+            border: 2px solid transparent;
             border-radius: 5px;
-            background-color: #F0EBFF;
+            /*background-color: #F0EBFF;*/
         }
 
         form label {
             display: block;
             margin-bottom: 10px;
+            color: white;
         }
 
         form input[type="text"],
@@ -64,15 +72,30 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
-        }
+            color: white;
+        }    
 
         form input[type="submit"] {
-            background-color: #B399FF;
-            color: black;
             cursor: pointer;
+            border-radius: 5px;
+            color: black;
+            border-style: solid;
+            background-color: #B399FF;
+            transition: 0.2s ease;
+            text-transform: uppercase;
+            border-width: 1px;
+            font-weight: 15;
+            font-size: 10px;
         }
 
         form input[type="submit"]:hover {
+            color: rgb(247, 247, 247);
             background-color: #855CFF;
+            border-color: #855CFF;
+            box-shadow: 0 0 10px #855CFF, 0 0 10px #855CFF;
+        }
+
+        .error{
+            color: red;
         }
     </style>

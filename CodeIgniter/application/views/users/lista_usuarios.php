@@ -15,7 +15,6 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Teléfono</th>
-                <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
@@ -26,9 +25,12 @@
                     <td><?php echo $usuario->Name; ?></td>
                     <td><?php echo $usuario->LastName; ?></td>
                     <td><?php echo $usuario->Telephone; ?></td>
+                    <td>
+                        <form action="<?php echo base_url('index.php/users/eliminar_usuario/'.$usuario->id); ?>" method="post">
+                            <button class="ui-btn" type="submit">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
-                    <form action="<?php echo base_url('index.php/users/eliminar_usuario/'.$usuario->id); ?>" method="post">
-                    <button type="submit">Eliminar</button>
             <?php endforeach; ?>
         </tbody>
     </table>
@@ -48,12 +50,48 @@
 <style>
 h1{
     text-align: center;
-    color: #47BFFF;
+    color: #855CFF;
     font-family:'Times New Roman', Times, serif;
 }
 
 th{
-    color: #47BFFF;
+    color: #855CFF;
+}
+
+#tabla_usuarios tbody tr {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#tabla_usuarios tbody tr:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+.ui-btn {
+  cursor: pointer; 
+  border-radius: 5px;
+  color: black;
+  border-style: solid;
+  background-color: transparent;
+  border-color: black;
+  width: 80px;
+  height: 30px;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  border-width: 1px;
+  font-weight: 15;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background-color: rgb(202, 25, 25);
+  border-color: rgb(202, 25, 25);
+ 
+}
+.ui-btn:active {
+  width: 115px;
+  height: 38px;
+  letter-spacing: 0px;
 }
 
 </style>

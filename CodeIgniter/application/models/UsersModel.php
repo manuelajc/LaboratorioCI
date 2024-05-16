@@ -20,6 +20,17 @@ class usersModel extends CI_model{
 
         return $this->db->affected_rows() > 0;
     }
+
+    public function obtener_usuario_por_id($id) {
+        $query = $this->db->get_where('users', array('id' => $id));
+        return $query->row();
+    }
+
+    public function actualizar_usuario($id, $datos) {
+        $this->db->where('id', $id);
+        $this->db->update('users', $datos);
+        return $this->db->affected_rows() > 0;
+    }
 }
     
 
